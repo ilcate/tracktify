@@ -23,6 +23,7 @@
 		2A86DBA82C6250EA00B572F8 /* APIStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBA72C6250EA00B572F8 /* APIStructures.swift */; };
 		2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBAB2C62576800B572F8 /* SongInTop.swift */; };
 		2A86DBAF2C62595A00B572F8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */; };
+		2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDataManager.swift; sourceTree = "<group>"; };
 		2A86DBA72C6250EA00B572F8 /* APIStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStructures.swift; sourceTree = "<group>"; };
 		2A86DBAB2C62576800B572F8 /* SongInTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInTop.swift; sourceTree = "<group>"; };
+		2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				2A3309982C5CD4D500CEED33 /* Info.plist */,
 				2A86DBA12C624E5000B572F8 /* AppView.swift */,
+				2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */,
 				2A86DBAB2C62576800B572F8 /* SongInTop.swift */,
 				2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */,
 				2A3309842C5CBA5D00CEED33 /* ContentView.swift */,
@@ -205,6 +208,7 @@
 			files = (
 				2A86DB9C2C60F47100B572F8 /* APIService.swift in Sources */,
 				2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */,
+				2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */,
 				2A86DB9E2C60F6A300B572F8 /* Web.swift in Sources */,
 				2A86DB982C60F29900B572F8 /* APIConstants.swift in Sources */,
 				2A86DBA22C624E5000B572F8 /* AppView.swift in Sources */,

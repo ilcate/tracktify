@@ -3,6 +3,7 @@ import Alamofire
 
 struct ContentView: View {
     @StateObject var spotifyDataManager = SpotifyDataManager()
+    @StateObject var audioPlayer = AudioPlayer()
     
     var body: some View {
         NavigationStack{
@@ -43,6 +44,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(spotifyDataManager)
+        .environmentObject(audioPlayer)
     }
 
   

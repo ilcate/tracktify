@@ -11,6 +11,7 @@ import SDWebImageSwiftUI
 struct AppView: View {
     @EnvironmentObject var spotifyDataManager : SpotifyDataManager
     
+    
     var body: some View {
         VStack{
             HStack (alignment:.bottom){
@@ -37,45 +38,16 @@ struct AppView: View {
             .padding(.top, 28)
             .padding(.bottom, 8)
             .padding(.horizontal, 12)
+            
+            
             LazyVStack{
                 ForEach(spotifyDataManager.yourTopTracks, id: \.self){ song in
-                    HStack {
-                        WebImage(url: URL(string: song.album.images[1].url))
-                            .resizable()
-                            .indicator(.activity)
-                            .scaledToFit()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(4)
-                            .padding(.leading, 12)
-                            .padding(.vertical, 12)
-                        
-                        VStack (alignment:.leading){
-                            
-                            Text(song.name)
-                                .foregroundStyle(.white)
-                                .font(.title3)
-                                .lineLimit(1)
-                            
-                            Text(song.artists[0].name)
-                                .foregroundStyle(.white)
-                                .font(.caption)
-                        }
-                        Spacer()
-                        Image(systemName: "play.circle.fill")
-                            .font(.title)
-                            .padding(.trailing, 12)
-                        
+                        SongInTop(song: song)
                     }
-                    
-                    .background(.white.opacity(0.1))
-                    .clipShape(RoundedRectangle(cornerRadius: 6))
-                    .frame(maxWidth: .infinity, minHeight: 80, maxHeight: 80)
-                    .padding(.bottom, -2)
-                    .padding(.horizontal, 12)
+                   
                     
                 }
             }
         }
-    }
 }
 
