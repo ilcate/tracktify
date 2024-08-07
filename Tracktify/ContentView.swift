@@ -1,53 +1,49 @@
 import SwiftUI
-import WebKit
-
+import Alamofire
 
 struct ContentView: View {
-    @EnvironmentObject var appDelegate: AppDelegate
-    @StateObject var spotifyManager = SpotifyApiManager()
+    @StateObject var spotifyDataManager = SpotifyDataManager()
     
     var body: some View {
-        VStack {
-            Text("try to get token")
-                .onTapGesture {
-                    let queryItems = [URLQueryItem(name: "client_id", value: spotifyManager.clientId), URLQueryItem(name: "response_type", value: "code"), URLQueryItem(name: "redirect_uri", value: "spotify-ios-quick-start://spotify-login-callback")]
-                    var urlComps = URLComponents(string: "https://accounts.spotify.com/authorize?")!
-                    urlComps.queryItems = queryItems
-                    let result = urlComps.url!
-                    print(result)
-                    UIApplication.shared.open(result)
+        NavigationStack{
+            VStack {
+                if spotifyDataManager.accessToken != nil {
+                    VStack{
+                        AppView()
+                        Spacer()
+                        Text("logout")
+                            .foregroundStyle(.white)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 12)
+                            .background(.red)
+                            .clipShape(RoundedRectangle(cornerRadius: 14))
+                            .onTapGesture {
+                                spotifyDataManager.logout()
+                            }
+                    }
+                
+                    
+                } else {
+                    Text("Login to Spotify")
+                        .onTapGesture {
+                            spotifyDataManager.showWebView.toggle()
+                        }
+                    .sheet(isPresented: $spotifyDataManager.showWebView) {
+                        if let urlRequest = APIService.shared.getAccessTokenURL() {
+                            WebView(urlRequest: urlRequest) { token in
+                                spotifyDataManager.accessToken = token
+                                spotifyDataManager.showWebView = false
+                                
+                            }
+                        }
+                    }
                 }
-            
-            if let token = appDelegate.authToken {
-                Text("Access Token: \(token)")
-            } else {
-                Text("No Access Token")
+                
+                
             }
         }
-        
+        .environmentObject(spotifyDataManager)
     }
-}
 
-struct WebView: UIViewRepresentable {
- 
-    let webView: WKWebView
-    
-    init() {
-        webView = WKWebView(frame: .zero)
-      
-    }
-    
-    func makeUIView(context: Context) -> WKWebView {
-        return webView
-    }
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        let queryItems = [URLQueryItem(name: "client_id", value: spotifyManager.clientId), URLQueryItem(name: "response_type", value: "code"), URLQueryItem(name: "redirect_uri", value: "spotify-ios-quick-start://spotify-login-callback")]
-        var urlComps = URLComponents(string: "https://accounts.spotify.com/authorize?")!
-        urlComps.queryItems = queryItems
-        let result = urlComps.url!
-        print(result)
-        UIApplication.shared.open(result)
-        webView.load(URLRequest(url: URL(string: )!))
-    }
+  
 }

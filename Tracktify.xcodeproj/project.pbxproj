@@ -11,10 +11,33 @@
 		2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309842C5CBA5D00CEED33 /* ContentView.swift */; };
 		2A3309872C5CBA5E00CEED33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3309862C5CBA5E00CEED33 /* Assets.xcassets */; };
 		2A33098A2C5CBA5E00CEED33 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3309892C5CBA5E00CEED33 /* Preview Assets.xcassets */; };
-		2A3309912C5CBC3A00CEED33 /* SpotifyApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309902C5CBC3A00CEED33 /* SpotifyApiManager.swift */; };
-		2A3309932C5CBD6F00CEED33 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309922C5CBD6F00CEED33 /* DataStructures.swift */; };
-		2A3309962C5CBE2E00CEED33 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3309952C5CBE2E00CEED33 /* Alamofire */; };
+		2A3309A02C5E0F3100CEED33 /* SpotifyLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A33099D2C5E0C9300CEED33 /* SpotifyLogin.xcframework */; };
+		2A3309A12C5E0F3100CEED33 /* SpotifyLogin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A33099D2C5E0C9300CEED33 /* SpotifyLogin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A86DB942C60B26000B572F8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A86DB932C60B26000B572F8 /* Alamofire */; };
+		2A86DB982C60F29900B572F8 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DB972C60F29900B572F8 /* APIConstants.swift */; };
+		2A86DB9A2C60F43200B572F8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DB992C60F43200B572F8 /* NetworkError.swift */; };
+		2A86DB9C2C60F47100B572F8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DB9B2C60F47100B572F8 /* APIService.swift */; };
+		2A86DB9E2C60F6A300B572F8 /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DB9D2C60F6A300B572F8 /* Web.swift */; };
+		2A86DBA22C624E5000B572F8 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBA12C624E5000B572F8 /* AppView.swift */; };
+		2A86DBA42C624F3E00B572F8 /* SpotifyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */; };
+		2A86DBA82C6250EA00B572F8 /* APIStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBA72C6250EA00B572F8 /* APIStructures.swift */; };
+		2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBAB2C62576800B572F8 /* SongInTop.swift */; };
+		2A86DBAF2C62595A00B572F8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A3309A22C5E0F3100CEED33 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2A3309A12C5E0F3100CEED33 /* SpotifyLogin.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A33097F2C5CBA5D00CEED33 /* Tracktify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracktify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,9 +45,16 @@
 		2A3309842C5CBA5D00CEED33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A3309862C5CBA5E00CEED33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A3309892C5CBA5E00CEED33 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2A3309902C5CBC3A00CEED33 /* SpotifyApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyApiManager.swift; sourceTree = "<group>"; };
-		2A3309922C5CBD6F00CEED33 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		2A3309982C5CD4D500CEED33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2A33099D2C5E0C9300CEED33 /* SpotifyLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SpotifyLogin.xcframework; sourceTree = "<group>"; };
+		2A86DB972C60F29900B572F8 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		2A86DB992C60F43200B572F8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2A86DB9B2C60F47100B572F8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		2A86DB9D2C60F6A300B572F8 /* Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
+		2A86DBA12C624E5000B572F8 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDataManager.swift; sourceTree = "<group>"; };
+		2A86DBA72C6250EA00B572F8 /* APIStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStructures.swift; sourceTree = "<group>"; };
+		2A86DBAB2C62576800B572F8 /* SongInTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInTop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A3309962C5CBE2E00CEED33 /* Alamofire in Frameworks */,
+				2A86DBAF2C62595A00B572F8 /* SDWebImageSwiftUI in Frameworks */,
+				2A3309A02C5E0F3100CEED33 /* SpotifyLogin.xcframework in Frameworks */,
+				2A86DB942C60B26000B572F8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				2A3309982C5CD4D500CEED33 /* Info.plist */,
+				2A86DBA12C624E5000B572F8 /* AppView.swift */,
+				2A86DBAB2C62576800B572F8 /* SongInTop.swift */,
 				2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */,
 				2A3309842C5CBA5D00CEED33 /* ContentView.swift */,
 				2A3309972C5CBE5400CEED33 /* SpotifyDataManager */,
@@ -72,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2A3309892C5CBA5E00CEED33 /* Preview Assets.xcassets */,
+				2A33099D2C5E0C9300CEED33 /* SpotifyLogin.xcframework */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -79,8 +114,12 @@
 		2A3309972C5CBE5400CEED33 /* SpotifyDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				2A3309902C5CBC3A00CEED33 /* SpotifyApiManager.swift */,
-				2A3309922C5CBD6F00CEED33 /* DataStructures.swift */,
+				2A86DB972C60F29900B572F8 /* APIConstants.swift */,
+				2A86DB992C60F43200B572F8 /* NetworkError.swift */,
+				2A86DB9B2C60F47100B572F8 /* APIService.swift */,
+				2A86DB9D2C60F6A300B572F8 /* Web.swift */,
+				2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */,
+				2A86DBA72C6250EA00B572F8 /* APIStructures.swift */,
 			);
 			path = SpotifyDataManager;
 			sourceTree = "<group>";
@@ -95,6 +134,7 @@
 				2A33097B2C5CBA5D00CEED33 /* Sources */,
 				2A33097C2C5CBA5D00CEED33 /* Frameworks */,
 				2A33097D2C5CBA5D00CEED33 /* Resources */,
+				2A3309A22C5E0F3100CEED33 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,7 +142,8 @@
 			);
 			name = Tracktify;
 			packageProductDependencies = (
-				2A3309952C5CBE2E00CEED33 /* Alamofire */,
+				2A86DB932C60B26000B572F8 /* Alamofire */,
+				2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */,
 			);
 			productName = Tracktify;
 			productReference = 2A33097F2C5CBA5D00CEED33 /* Tracktify.app */;
@@ -133,8 +174,8 @@
 			);
 			mainGroup = 2A3309762C5CBA5D00CEED33;
 			packageReferences = (
-				2A3309942C5CBE2E00CEED33 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				2A33099B2C5E0B6500CEED33 /* XCRemoteSwiftPackageReference "ios-auth" */,
+				2A86DB922C60B26000B572F8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2A86DBAD2C62595A00B572F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 2A3309802C5CBA5D00CEED33 /* Products */;
 			projectDirPath = "";
@@ -162,9 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A3309912C5CBC3A00CEED33 /* SpotifyApiManager.swift in Sources */,
-				2A3309932C5CBD6F00CEED33 /* DataStructures.swift in Sources */,
+				2A86DB9C2C60F47100B572F8 /* APIService.swift in Sources */,
+				2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */,
+				2A86DB9E2C60F6A300B572F8 /* Web.swift in Sources */,
+				2A86DB982C60F29900B572F8 /* APIConstants.swift in Sources */,
+				2A86DBA22C624E5000B572F8 /* AppView.swift in Sources */,
+				2A86DBA82C6250EA00B572F8 /* APIStructures.swift in Sources */,
+				2A86DB9A2C60F43200B572F8 /* NetworkError.swift in Sources */,
 				2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */,
+				2A86DBA42C624F3E00B572F8 /* SpotifyDataManager.swift in Sources */,
 				2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +434,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A3309942C5CBE2E00CEED33 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		2A86DB922C60B26000B572F8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -395,21 +442,26 @@
 				minimumVersion = 5.9.1;
 			};
 		};
-		2A33099B2C5E0B6500CEED33 /* XCRemoteSwiftPackageReference "ios-auth" */ = {
+		2A86DBAD2C62595A00B572F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/spotify/ios-auth.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2A3309952C5CBE2E00CEED33 /* Alamofire */ = {
+		2A86DB932C60B26000B572F8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2A3309942C5CBE2E00CEED33 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 2A86DB922C60B26000B572F8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A86DBAD2C62595A00B572F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
