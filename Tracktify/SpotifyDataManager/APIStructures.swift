@@ -25,10 +25,34 @@ struct Album: Decodable, Hashable {
     var id: String
     var name: String
     var total_tracks: Int
-    var images: [Cover]
+    var images: [ImageFetch]
 }
 
-struct Cover: Decodable, Hashable {
+
+struct PersonalInfo: Decodable {
+    var display_name: String
+    var images: [ImageFetch]
+}
+
+
+struct ImageFetch: Decodable, Hashable {
     var url: String
 }
 
+
+struct NewReleases: Decodable {
+    var albums: NewAlbumReleases
+}
+
+struct NewAlbumReleases: Decodable {
+    var items: [AlbumRel]
+    
+}
+
+struct AlbumRel: Decodable, Hashable {
+    var artists: [Artist]
+    var id : String
+    var images:  [ImageFetch]
+    var name: String
+    var release_date: String
+}
