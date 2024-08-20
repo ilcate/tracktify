@@ -5,6 +5,14 @@ struct TopTrack: Decodable {
     var items: [Song]
 }
 
+struct RecentTrack: Decodable {
+    var items: [RecentItems]
+}
+
+struct RecentItems: Decodable, Hashable {
+    var track: Song
+}
+
 struct Song : Decodable, Hashable, Equatable {
     var id: String
     var name: String
@@ -52,7 +60,7 @@ struct NewAlbumReleases: Decodable {
 struct AlbumRel: Decodable, Hashable {
     var artists: [Artist]
     var id : String
-    var images:  [ImageFetch]
+    var images: [ImageFetch]
     var name: String
     var release_date: String
 }

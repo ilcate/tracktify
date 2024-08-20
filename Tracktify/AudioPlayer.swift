@@ -29,7 +29,7 @@ class AudioPlayer: ObservableObject {
         }
     }
     
-    func pauseSong(songToPlay: URL){
+    func pauseSong(){
         player?.pause()
         isPlaying = false
     }
