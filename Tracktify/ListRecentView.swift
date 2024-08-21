@@ -53,7 +53,6 @@ struct ListRecentView: View {
                             Image(systemName: audioPlayer.isPlaying && song.track.name == audioPlayer.songInPlay  ? "stop.circle.fill" : "play.circle.fill")
                                 .font(.title)
                                 .onTapGesture {
-                                    
                                     if audioPlayer.songInPlay != song.track.name{
                                         audioPlayer.playSong(songToPlay: URL(string: song.track.preview_url)!, songName: song.track.name)
                                     } else if audioPlayer.isPlaying {
@@ -68,7 +67,7 @@ struct ListRecentView: View {
                         .padding(.vertical, 6)
                         .background(.white.opacity(0.1))
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .padding(.bottom, 8)
+                        .padding(.bottom, 6)
                         
                     }
                 

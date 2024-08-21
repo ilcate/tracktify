@@ -8,10 +8,6 @@ struct HomeView: View {
                 .padding(.bottom, 4)
             NewReleasesView()
             RecentlyPlayedView()
-                
-            
-            
-            
             
             Spacer()
         }

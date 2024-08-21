@@ -64,3 +64,8 @@ struct AlbumRel: Decodable, Hashable {
     var name: String
     var release_date: String
 }
+
+
+struct Genres: Decodable{
+    var genres: [String]
+}

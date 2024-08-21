@@ -9,7 +9,30 @@ import SwiftUI
 
 struct SuggestView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Spacer()
+            Text("single song")
+                .padding()
+                .background(.accent.opacity(0.5))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            Spacer()
+            NavigationLink {
+                GenresView()
+                    .background(.cBlack)
+            } label: {
+                Text("suggest a playlist")
+                    .foregroundStyle(.black)
+                    .padding()
+                    .background(.accent)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+
+            }
+            
+
+            
+            Spacer()
+        }
+        
     }
 }
 

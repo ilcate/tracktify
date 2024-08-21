@@ -41,6 +41,7 @@
 		2A86DBAF2C62595A00B572F8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */; };
 		2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */; };
 		2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7C92C733D7100E33602 /* ListRecentView.swift */; };
+		2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CB2C74774F00E33602 /* GenresView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +92,7 @@
 		2A86DBAB2C62576800B572F8 /* SongInTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInTop.swift; sourceTree = "<group>"; };
 		2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		2A97D7C92C733D7100E33602 /* ListRecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecentView.swift; sourceTree = "<group>"; };
+		2A97D7CB2C74774F00E33602 /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				2A3309842C5CBA5D00CEED33 /* ContentView.swift */,
 				2A4A154C2C64B3AD00984B84 /* OtherView.swift */,
 				2A4A15482C64B37300984B84 /* SuggestView.swift */,
+				2A97D7CB2C74774F00E33602 /* GenresView.swift */,
 				2A4A15462C64B36100984B84 /* TopView.swift */,
 				2A4A15442C64B33000984B84 /* HomeView.swift */,
 				2A6F1EF72C7321730001F4F0 /* RecentlyPlayedView.swift */,
@@ -324,6 +327,7 @@
 				2A6F1EF82C7321730001F4F0 /* RecentlyPlayedView.swift in Sources */,
 				2A86DBA42C624F3E00B572F8 /* SpotifyDataManager.swift in Sources */,
 				2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */,
+				2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */,
 				2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ class SpotifyDataManager: ObservableObject {
     @Published var yourTopTracks : [Song] = []
     @Published var newReleasedAlbums : [AlbumRel] = []
     @Published var recentlyPlayedSongs : [RecentItems] = []
+    @Published var spotifyGenres : [String] = []
     private var term = ["short_term", "medium_term", "long_term"]
     @Published var termOfTopTrack = 0
     @Published var username = ""
@@ -79,6 +80,21 @@ class SpotifyDataManager: ObservableObject {
                 }
             }
     }
+    
+    func getMusicGenres(){
+        let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
+        AF.request("https://api.spotify.com/v1/recommendations/available-genre-seeds", method: .get, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: Genres.self){ resp in
+                switch resp.result {
+                case .success(let allGenres):
+                    self.spotifyGenres = allGenres.genres
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
     
     func getSomeRecentlyPlayed(){
         self.getRecentlyPlayed(number: 3)
