@@ -13,11 +13,16 @@ struct RecentItems: Decodable, Hashable {
     var track: Song
 }
 
+
+struct SuggestSong: Decodable, Hashable {
+    var tracks: [Song]
+}
+
 struct Song : Decodable, Hashable, Equatable {
     var id: String
     var name: String
     var uri: String
-    var preview_url: String
+    var preview_url: String?
     var explicit: Bool
     var artists: [Artist]
     var album: Album

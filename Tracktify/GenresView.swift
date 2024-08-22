@@ -2,33 +2,69 @@ import SwiftUI
 
 struct GenresView: View {
     @EnvironmentObject var spotifyDataManager: SpotifyDataManager
+    @State private var genreSearch = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Title(titleText: "Select some genres", toExecute: spotifyDataManager.getMusicGenres)
-            
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    ForEach(groupItems(spotifyDataManager.spotifyGenres), id: \.self) { rowItems in
-                        HStack {
-                            ForEach(rowItems, id: \.self) { item in
-                                Text(item)
-                                    .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 18, fontColor: .white)
-                                    .padding(6)
-                                    .background(.white.opacity(0.5))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(8)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(.accent, lineWidth: 2)
-                                    )
+        ZStack{
+            VStack(alignment: .leading) {
+                Title(titleText: "Select some genres", toExecute: spotifyDataManager.getMusicGenres)
+                    TextField(
+                           "search",
+                           text: $genreSearch
+                       )
+                
+                
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 10) {
+                        ForEach(groupItems(genreSearch == "" ? spotifyDataManager.spotifyGenres : spotifyDataManager.spotifyGenres.filter({ $0.contains(genreSearch)})), id: \.self) { rowItems in
+                            HStack {
+                                ForEach(rowItems, id: \.self) { item in
+                                    Text(item)
+                                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 18, fontColor:  .white )
+                                        .padding(6)
+                                        .background(spotifyDataManager.selectedGenres.contains(item) ? .accent : .white.opacity(0.5))
+                                        .foregroundColor(.white)
+                                        .cornerRadius(8)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 8)
+                                                .stroke(.accent, lineWidth: 2)
+                                        )
+                                        .onTapGesture{
+                                            if spotifyDataManager.selectedGenres.contains(item) {
+                                                let toRemove = spotifyDataManager.selectedGenres.lastIndex(of: item)
+                                                spotifyDataManager.selectedGenres.remove(at: toRemove!)
+                                            } else if spotifyDataManager.selectedGenres.count < 5 {
+                                                spotifyDataManager.selectedGenres.append(item)
+                                            }
+                                            
+                                        }
+                                }
                             }
                         }
                     }
+                    .padding()
                 }
-                .padding()
+            }
+            
+            VStack{
+                Spacer()
+                NavigationLink {
+                    SuggestionView()
+                        .background(.cBlack)
+                } label: {
+                    Text("Continue")
+                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 20, fontColor: .white)
+                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .background(spotifyDataManager.selectedGenres.count > 0 ? .accent : .gray)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .padding(.bottom, -8)
+                        .padding(.horizontal, 12)
+
+                }
+               
             }
         }
+       
     }
     
     private func groupItems(_ items: [String]) -> [[String]] {

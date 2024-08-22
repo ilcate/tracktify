@@ -15,6 +15,14 @@ class SpotifyDataManager: ObservableObject {
     @Published var username = ""
     @Published var profilePicture = ""
     
+    @Published var selectedGenres : [String] = []
+    @Published var quantitySong = 30
+    @Published var minDancebility = 0.1
+    @Published var minEnergy = 0.1
+    @Published var minPopularity = 0
+    @Published var maxPopularity = 100
+    
+    @Published var suggestions : [Song] = []
     
     
     
@@ -95,6 +103,20 @@ class SpotifyDataManager: ObservableObject {
             }
     }
     
+    func getSuggestions(){
+        let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
+        AF.request("https://api.spotify.com/v1/recommendations?limit=\(quantitySong)&seed_genres=\(selectedGenres.joined(separator: "%2C"))&min_danceability=\(minDancebility)&min_energy=\(minEnergy)&min_popularity=\(minPopularity)&max_popularity=\(maxPopularity)", method: .get, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: SuggestSong.self){ res in
+                switch res.result {
+                case .success(let results):
+                    self.suggestions = results.tracks
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
     
     func getSomeRecentlyPlayed(){
         self.getRecentlyPlayed(number: 3)
@@ -105,3 +127,5 @@ class SpotifyDataManager: ObservableObject {
     }
     
 }
+
+

@@ -39,7 +39,7 @@ struct SongInTop: View {
                 .font(.title)
                 .padding(.trailing, 12)
                 .onTapGesture {
-                    audioPlayer.playSong(songToPlay: URL(string: song.preview_url)!, songName: song.name)
+                    audioPlayer.playSong(songToPlay: URL(string: song.preview_url!)!, songName: song.name)
                 }
         } .background(.white.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 6))

@@ -54,11 +54,11 @@ struct ListRecentView: View {
                                 .font(.title)
                                 .onTapGesture {
                                     if audioPlayer.songInPlay != song.track.name{
-                                        audioPlayer.playSong(songToPlay: URL(string: song.track.preview_url)!, songName: song.track.name)
+                                        audioPlayer.playSong(songToPlay: URL(string: song.track.preview_url!)!, songName: song.track.name)
                                     } else if audioPlayer.isPlaying {
                                         audioPlayer.pauseSong()
                                     } else {
-                                        audioPlayer.playSong(songToPlay: URL(string: song.track.preview_url)!, songName: song.track.name)
+                                        audioPlayer.playSong(songToPlay: URL(string: song.track.preview_url!)!, songName: song.track.name)
                                     }
                                     
                                 }
