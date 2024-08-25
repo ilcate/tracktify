@@ -49,7 +49,7 @@ struct GenresView: View {
             VStack{
                 Spacer()
                 NavigationLink {
-                    SuggestionView()
+                    AddFiltersView()
                         .background(.cBlack)
                 } label: {
                     Text("Continue")

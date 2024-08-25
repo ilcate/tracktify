@@ -25,6 +25,14 @@ class SpotifyDataManager: ObservableObject {
     @Published var suggestions : [Song] = []
     
     
+    @Published var songQuantity: Int = 1
+    @Published var energy = 50.0
+    @Published var danceOnPlaylist = true
+    @Published var isEditing = false
+    @Published var selection = "No thx"
+    @Published var possibilities = ["Yes please", "So and so", "No thx"]
+    
+    
     
     func logout(){
         UserDefaults.standard.removeObject(forKey: "Authorization")
@@ -105,7 +113,10 @@ class SpotifyDataManager: ObservableObject {
     
     func getSuggestions(){
         let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
-        AF.request("https://api.spotify.com/v1/recommendations?limit=\(quantitySong)&seed_genres=\(selectedGenres.joined(separator: "%2C"))&min_danceability=\(minDancebility)&min_energy=\(minEnergy)&min_popularity=\(minPopularity)&max_popularity=\(maxPopularity)", method: .get, headers: headers)
+        let url = "https://api.spotify.com/v1/recommendations?limit=\(songQuantity)&seed_genres=\(selectedGenres.joined(separator: "%2C"))&min_danceability=\(danceOnPlaylist ? 0.7 : 0)&min_energy=\(energy / 100 )&min_popularity=\(selection == "No thx" ? 0 : selection == "So and so" ?  30 : 60)&max_popularity=\(selection == "No thx" ? 30: selection == "So and so" ?  60 : 90)"
+        
+        print(url)
+        AF.request(url, method: .get, headers: headers)
             .validate(statusCode: 200..<300)
             .responseDecodable(of: SuggestSong.self){ res in
                 switch res.result {

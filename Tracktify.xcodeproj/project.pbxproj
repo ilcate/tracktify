@@ -43,6 +43,7 @@
 		2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7C92C733D7100E33602 /* ListRecentView.swift */; };
 		2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CB2C74774F00E33602 /* GenresView.swift */; };
 		2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CF2C76265100E33602 /* SuggestionView.swift */; };
+		2A97D7D52C7761F200E33602 /* AddFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7D42C7761F200E33602 /* AddFiltersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +96,7 @@
 		2A97D7C92C733D7100E33602 /* ListRecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecentView.swift; sourceTree = "<group>"; };
 		2A97D7CB2C74774F00E33602 /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
 		2A97D7CF2C76265100E33602 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
+		2A97D7D42C7761F200E33602 /* AddFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				2A3309982C5CD4D500CEED33 /* Info.plist */,
-				2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */,
-				2A86DBAB2C62576800B572F8 /* SongInTop.swift */,
 				2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */,
+				2A97D7D42C7761F200E33602 /* AddFiltersView.swift */,
+				2A86DBAB2C62576800B572F8 /* SongInTop.swift */,
 				2A3309842C5CBA5D00CEED33 /* ContentView.swift */,
 				2A4A154C2C64B3AD00984B84 /* OtherView.swift */,
 				2A4A15482C64B37300984B84 /* SuggestView.swift */,
@@ -192,8 +194,9 @@
 		2A4A15332C64AA4300984B84 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2A6F1EF02C731CC00001F4F0 /* Components */,
+				2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */,
 				2A4A15312C64AA0A00984B84 /* ViewModifiers.swift */,
+				2A6F1EF02C731CC00001F4F0 /* Components */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				2A86DB982C60F29900B572F8 /* APIConstants.swift in Sources */,
 				2A86DBA82C6250EA00B572F8 /* APIStructures.swift in Sources */,
 				2A86DB9A2C60F43200B572F8 /* NetworkError.swift in Sources */,
+				2A97D7D52C7761F200E33602 /* AddFiltersView.swift in Sources */,
 				2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */,
 				2A6F1EF22C731D050001F4F0 /* HomeHeader.swift in Sources */,
 				2A6F1EF82C7321730001F4F0 /* RecentlyPlayedView.swift in Sources */,
