@@ -44,6 +44,7 @@ struct Album: Decodable, Hashable {
 
 struct PersonalInfo: Decodable {
     var display_name: String
+    var id: String
     var images: [ImageFetch]
 }
 
@@ -73,4 +74,34 @@ struct AlbumRel: Decodable, Hashable {
 
 struct Genres: Decodable{
     var genres: [String]
+}
+
+
+struct PlaylistCreated : Codable {
+    var id: String
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+struct CreationPlaylist: Encodable {
+    var name: String
+    var description: String
+    var `public`: Bool
+}
+
+struct PlaylistInfo: Encodable {
+    var uris: [String]
+    var position : Int
 }

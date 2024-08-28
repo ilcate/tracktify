@@ -13,7 +13,7 @@ struct AddFiltersView: View {
             HStack {
                 Text("How many songs do you want?")
                 Spacer()
-                TextField("1", value: $spotifyDataManager.songQuantity, formatter: NumberFormatter())
+                TextField( "1", value: $spotifyDataManager.songQuantity, formatter: NumberFormatter())
                     .keyboardType(.numberPad)
                     .onChange(of: spotifyDataManager.songQuantity) { oldValue, newValue in
                         if newValue <= 0 {

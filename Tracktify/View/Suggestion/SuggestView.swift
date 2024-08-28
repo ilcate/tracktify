@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SuggestView: View {
+    @EnvironmentObject var spotifyDataManager: SpotifyDataManager
+    
     var body: some View {
         HStack{
             Spacer()
@@ -15,6 +17,10 @@ struct SuggestView: View {
                 .padding()
                 .background(.accent.opacity(0.5))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                .onTapGesture {
+                    spotifyDataManager.createPlaylist()
+                    
+                }
             Spacer()
             NavigationLink {
                 GenresView()
@@ -34,8 +40,4 @@ struct SuggestView: View {
         }
         
     }
-}
-
-#Preview {
-    SuggestView()
 }

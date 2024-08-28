@@ -7,7 +7,7 @@ enum APIConstants {
     static let authHost = "accounts.spotify.com"
     static let redirectUri = "https://www.google.com"
     static let responseType = "token"
-    static let scope = "user-top-read user-read-private user-read-email user-read-recently-played"
+    static let scope = "user-top-read user-read-private user-read-email user-read-recently-played playlist-modify-public playlist-modify-private"
     
     static var authParams = [
         "response_type": responseType,

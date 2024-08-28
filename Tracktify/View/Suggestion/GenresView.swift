@@ -54,7 +54,7 @@ struct GenresView: View {
                 } label: {
                     Text("Continue")
                         .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 20, fontColor: .white)
-                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .frame(maxWidth: .infinity, minHeight: 50)
                         .background(spotifyDataManager.selectedGenres.count > 0 ? .accent : .gray)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .padding(.bottom, -8)

@@ -31,6 +31,10 @@ class SpotifyDataManager: ObservableObject {
     @Published var isEditing = false
     @Published var selection = "No thx"
     @Published var possibilities = ["Yes please", "So and so", "No thx"]
+    @Published var uris : [String] = []
+    @Published var playlistName = "New Playlist"
+    
+    private var userId = ""
     
     
     
@@ -62,6 +66,7 @@ class SpotifyDataManager: ObservableObject {
                 switch res.result {
                 case .success(let info):
                     self.username = info.display_name
+                    self.userId = info.id
                     self.profilePicture = info.images[info.images.count-1].url
                 case .failure(let error):
                     print(error)
@@ -122,10 +127,48 @@ class SpotifyDataManager: ObservableObject {
                 switch res.result {
                 case .success(let results):
                     self.suggestions = results.tracks
+                    self.uris = self.extractURIs(from: results.tracks)
                 case .failure(let error):
                     print(error)
                 }
             }
+    }
+    
+    func createPlaylist(){
+        let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
+        let toSend = CreationPlaylist(name: self.playlistName, description: "This is a playlist made with Tracktify", public: false)
+        var playlistId = ""
+        
+        AF.request("https://api.spotify.com/v1/users/\(userId)/playlists", method: .post, parameters: toSend, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: PlaylistCreated.self){ resp in
+                switch resp.result {
+                case .success(let results):
+                    playlistId = results.id
+                   
+                    self.addSongToPlaylist(id: playlistId)
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+    
+    }
+    
+    func addSongToPlaylist(id: String){
+        let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
+        let toSend = PlaylistInfo(uris: self.uris, position: 0)
+        
+        AF.request("https://api.spotify.com/v1/playlists/\(id)/tracks", method: .post, parameters: toSend, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseString{ resp in
+                print(resp)
+            }
+    }
+    
+    func extractURIs(from tracks: [Song]) -> [String] {
+        return tracks.compactMap { $0.uri }
     }
     
     
