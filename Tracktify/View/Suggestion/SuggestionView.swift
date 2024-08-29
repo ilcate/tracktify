@@ -40,6 +40,7 @@ struct SuggestionView: View {
                             Image(systemName: "trash.circle")
                                 .onTapGesture {
                                     spotifyDataManager.suggestions.remove(at: index)
+                                    spotifyDataManager.uris.remove(at: index)
                                 }
                             
                             HStack {

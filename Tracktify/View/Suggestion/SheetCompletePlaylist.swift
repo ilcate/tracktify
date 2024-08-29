@@ -37,5 +37,3 @@ struct SheetCompletePlaylist: View {
     }
 }
 
-
-//TODO: sarebbe figo mandargli le immagini da qui

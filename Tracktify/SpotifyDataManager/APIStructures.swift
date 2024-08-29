@@ -105,3 +105,55 @@ struct PlaylistInfo: Encodable {
     var uris: [String]
     var position : Int
 }
+
+
+
+struct SpotifyPlaylistsResponse: Decodable {
+    var message: String
+    var playlists: Playlists
+}
+
+struct Playlists: Decodable {
+    var href: String
+    var items: [PlaylistItem]
+    var limit: Int
+    var next: String?
+    var offset: Int
+    var previous: String?
+    var total: Int
+}
+
+struct PlaylistItem: Decodable, Hashable {
+    var collaborative: Bool
+    var description: String
+    var external_urls: ExternalUrls
+    var href: String
+    var id: String
+    var images: [ImageFetch]
+    var name: String
+    var owner: PlaylistOwner
+    var primary_color: String?
+    var `public`: Bool
+    var snapshot_id: String
+    var tracks: TracksInfo
+    var type: String
+    var uri: String
+}
+
+struct ExternalUrls: Decodable, Hashable {
+    var spotify: String
+}
+
+struct PlaylistOwner: Decodable, Hashable {
+    var display_name: String
+    var external_urls: ExternalUrls
+    var href: String
+    var id: String
+    var type: String
+    var uri: String
+}
+
+struct TracksInfo: Decodable, Hashable {
+    var href: String
+    var total: Int
+}

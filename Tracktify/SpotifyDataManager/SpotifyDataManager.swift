@@ -34,6 +34,8 @@ class SpotifyDataManager: ObservableObject {
     @Published var uris : [String] = []
     @Published var playlistName = "New Playlist"
     
+    @Published var playlistInItaly : [PlaylistItem] = []
+    
     private var userId = ""
     
     
@@ -53,7 +55,7 @@ class SpotifyDataManager: ObservableObject {
                 case .success(let topTracks):
                     self.yourTopTracks = topTracks.items
                 case .failure(let error):
-                    print(error)
+                    self.logout()
                 }
             }
     }
@@ -69,7 +71,7 @@ class SpotifyDataManager: ObservableObject {
                     self.userId = info.id
                     self.profilePicture = info.images[info.images.count-1].url
                 case .failure(let error):
-                    print(error)
+                    self.logout()
                 }
             }
     }
@@ -164,6 +166,24 @@ class SpotifyDataManager: ObservableObject {
             .validate(statusCode: 200..<300)
             .responseString{ resp in
                 print(resp)
+            }
+    }
+    
+    
+    func mostStreamedPlaylist(){
+        let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
+        
+        AF.request("https://api.spotify.com/v1/browse/featured-playlists?locale=it_IT&limit=4&offset=0", method: .get, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: SpotifyPlaylistsResponse.self){ resp in
+                switch resp.result {
+                case .success(let results):
+                    self.playlistInItaly = results.playlists.items
+                    
+                case .failure(let error):
+                    print(error)
+                }
+                
             }
     }
     

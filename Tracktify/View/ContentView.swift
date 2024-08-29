@@ -45,6 +45,7 @@ struct ContentView: View {
                                 }
                             }
                             .tag(Tab.other2)
+                            .background(Color.cBlack)
             
                         OtherView()
                             .tabItem {
