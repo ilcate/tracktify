@@ -2,13 +2,32 @@ import SwiftUI
 
 struct AddFiltersView: View {
     @EnvironmentObject var spotifyDataManager: SpotifyDataManager
-    
+    @Environment(\.dismiss) private var dismiss
     
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Adjust with your preferences")
-                .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 20, fontColor: .white)
+            HStack(alignment: .bottom){
+                Text("Adjust with your preferences")
+                    .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 24, fontColor: .white)
+                Spacer()
+                Text("Back")
+                    .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 17, fontColor: .accent)
+                    .onTapGesture {
+                        dismiss()
+                    }
+            }.padding(.top, 20)
+            .padding(.bottom, 8)
+            .padding(.horizontal, 12)
+          
+            
+            Spacer()
+            Text("Selected Genres")
+                .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 24, fontColor: .white)
+            
+            
+            
+            
             Spacer()
             HStack {
                 Text("How many songs do you want?")
@@ -78,6 +97,6 @@ struct AddFiltersView: View {
             }
             
             Spacer()
-        }
+        }.navigationBarBackButtonHidden()
     }
 }

@@ -105,4 +105,5 @@ struct SuggestionView: View {
     }
 }
 
-//TODO: fix bruttino da cambiare, ho messo un default a caso
+//TODO: ugly fix, change the default value
+//TODO: pop to root can be a great choice 

@@ -4,6 +4,8 @@ import SDWebImageSwiftUI
 struct SuggestView: View {
     @EnvironmentObject var spotifyDataManager: SpotifyDataManager
     
+  
+    
     var body: some View {
         VStack {
             Image("SuggestionIllustration")
@@ -28,8 +30,7 @@ struct SuggestView: View {
                     .background(.cBlack)
             } label: {
                 Text("Begin now!")
-                    .normalTextStyle(fontName: "LeagueSpartan-Bold", fontSize: 20, fontColor: .white)
-                    .foregroundStyle(.black)
+                    .normalTextStyle(fontName: "LeagueSpartan-Bold", fontSize: 20, fontColor: .cBlack)
                     .padding()
                     .background(.accent)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -38,11 +39,11 @@ struct SuggestView: View {
             HStack {
                 Title(titleText: "Trending Playlist", toExecute: spotifyDataManager.mostStreamedPlaylist)
                 Spacer()
-            }
+            }.padding(.top, 20)
             
-            VStack(spacing: 16) {
+            VStack(spacing: 10) {
                 ForEach(0..<2) { rowIndex in
-                    HStack(spacing: 16) {
+                    HStack(spacing: 10) {
                         ForEach(0..<2) { columnIndex in
                             let index = rowIndex * 2 + columnIndex
                             if index < spotifyDataManager.playlistInItaly.count {
@@ -53,19 +54,27 @@ struct SuggestView: View {
                                         .scaledToFit()
                                         .frame(width: 44, height: 44)
                                         .cornerRadius(6)
+                                        .padding(.leading, 8)
                                     Text(playlist.name)
-                                        .foregroundColor(.white)
+                                        .normalTextStyle(fontName: "LeagueSpartan-Medium", fontSize: 18, fontColor: .white)
+                                        .padding(.trailing, 8)
+                                    Spacer()
                                 }
-                                .frame(width: 172)
-                                .background(.red)
+                                .padding(.vertical, 8)
+                                .frame(maxWidth: .infinity)
+                                .background(.white.opacity(0.1))
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                
                                 
                             }
                         }
                     }
                 }
-            }
+            }.padding(.horizontal, 12)
             
             Spacer()
+            
+            
         }
     }
 }

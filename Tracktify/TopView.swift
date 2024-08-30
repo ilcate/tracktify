@@ -1,18 +1,39 @@
-//
-//  TopView.swift
-//  Tracktify
-//
-//  Created by Christian Catenacci on 08/08/24.
-//
-
 import SwiftUI
 
 struct TopView: View {
+    @State private var array: [String] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if array.count > 0 {
+                HStack {
+                    ForEach(0..<min(array.count, 3), id: \.self) { index in
+                        Text(array[index])
+                    }
+                }
+            }
+            
+            if array.count > 3 {
+                HStack {
+                    ForEach(3..<min(array.count, 5), id: \.self) { index in
+                        Text(array[index])
+                    }
+                }
+            }
+            
+            if array.count < 5 {
+                Button(action: {
+                    array.append(randomString(length: 8))
+                }) {
+                    Text("Aggiungi")
+                        .foregroundColor(.blue)
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    TopView()
+func randomString(length: Int) -> String {
+    let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    return String((0..<length).map { _ in characters.randomElement()! })
 }

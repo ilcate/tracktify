@@ -45,6 +45,7 @@
 		2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CB2C74774F00E33602 /* GenresView.swift */; };
 		2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CF2C76265100E33602 /* SuggestionView.swift */; };
 		2A97D7D52C7761F200E33602 /* AddFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7D42C7761F200E33602 /* AddFiltersView.swift */; };
+		2AA712672C80BB130080837F /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA712662C80BB130080837F /* SongDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +100,7 @@
 		2A97D7CB2C74774F00E33602 /* GenresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresView.swift; sourceTree = "<group>"; };
 		2A97D7CF2C76265100E33602 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		2A97D7D42C7761F200E33602 /* AddFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersView.swift; sourceTree = "<group>"; };
+		2AA712662C80BB130080837F /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				2A8F30EA2C7CA70600C01D79 /* Suggestion */,
 				2A8F30E92C7CA6CA00C01D79 /* Home */,
 				2A4A154C2C64B3AD00984B84 /* OtherView.swift */,
+				2AA712662C80BB130080837F /* SongDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */,
 				2A6F1EFB2C7323200001F4F0 /* Title.swift in Sources */,
 				2A4A15452C64B33000984B84 /* HomeView.swift in Sources */,
+				2AA712672C80BB130080837F /* SongDetailView.swift in Sources */,
 				2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */,
 				2A4A15322C64AA0A00984B84 /* ViewModifiers.swift in Sources */,
 				2A6F1EF42C731D9B0001F4F0 /* NewReleases.swift in Sources */,

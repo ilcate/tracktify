@@ -2,16 +2,28 @@ import SwiftUI
 
 struct GenresView: View {
     @EnvironmentObject var spotifyDataManager: SpotifyDataManager
+    @Environment(\.dismiss) private var dismiss
+
     @State private var genreSearch = ""
     
     var body: some View {
         ZStack{
             VStack(alignment: .leading) {
-                Title(titleText: "Select some genres", toExecute: spotifyDataManager.getMusicGenres)
-                    TextField(
-                           "search",
-                           text: $genreSearch
-                       )
+                HStack(alignment: .bottom){
+                    Title(titleText: "Select some genres", toExecute: spotifyDataManager.getMusicGenres)
+                    Spacer()
+                    Text("Cancel")
+                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 17, fontColor: .accent)
+                        .onTapGesture {
+                            dismiss()
+                        }
+                        .padding(.trailing, 12)
+                }.padding(.top, 20)
+                    .padding(.bottom, 8)
+//                    TextField(
+//                           "search",
+//                           text: $genreSearch
+//                       )
                 
                 
                 ScrollView {
@@ -20,15 +32,11 @@ struct GenresView: View {
                             HStack {
                                 ForEach(rowItems, id: \.self) { item in
                                     Text(item)
-                                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 18, fontColor:  .white )
+                                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 18, fontColor: spotifyDataManager.selectedGenres.contains(item) ? .cBlack : .white )
                                         .padding(6)
-                                        .background(spotifyDataManager.selectedGenres.contains(item) ? .accent : .white.opacity(0.5))
+                                        .background(spotifyDataManager.selectedGenres.contains(item) ? .accent : .white.opacity(0.1))
                                         .foregroundColor(.white)
                                         .cornerRadius(8)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 8)
-                                                .stroke(.accent, lineWidth: 2)
-                                        )
                                         .onTapGesture{
                                             if spotifyDataManager.selectedGenres.contains(item) {
                                                 let toRemove = spotifyDataManager.selectedGenres.lastIndex(of: item)
@@ -42,7 +50,8 @@ struct GenresView: View {
                             }
                         }
                     }
-                    .padding()
+                    .padding(.horizontal, 12)
+                    .padding(.bottom, 60)
                 }
             }
             
@@ -53,17 +62,17 @@ struct GenresView: View {
                         .background(.cBlack)
                 } label: {
                     Text("Continue")
-                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 20, fontColor: .white)
+                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 20, fontColor: spotifyDataManager.selectedGenres.count > 0 ? .cBlack : .white)
                         .frame(maxWidth: .infinity, minHeight: 50)
-                        .background(spotifyDataManager.selectedGenres.count > 0 ? .accent : .gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .padding(.bottom, -8)
+                        .background(spotifyDataManager.selectedGenres.count > 0 ? .accent : .cdarkGray)
+                        .clipShape(RoundedRectangle(cornerRadius: 1000))
+                        .padding(.bottom, 0)
                         .padding(.horizontal, 12)
 
                 }
                
             }
-        }
+        }.navigationBarBackButtonHidden()
        
     }
     
@@ -100,3 +109,7 @@ struct GenresView: View {
         return size.width + 19
     }
 }
+
+
+
+//TODO: OPTIONAL try to divide genres in small categories to set them in some horizontal scroll view

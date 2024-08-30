@@ -11,6 +11,9 @@ import SDWebImageSwiftUI
 struct RecentlyPlayedView: View {
     @EnvironmentObject var spotifyDataManager: SpotifyDataManager
     @EnvironmentObject var audioPlayer : AudioPlayer
+    @State var sheetSong = false
+    @State var selectedSong : Song = Song(id: "", name: "", uri: "", preview_url: "", explicit: false, artists: [Artist(id: "", name: "")], album: Album(id: "", name: "", total_tracks: 0, images: [ImageFetch(url: "")]), duration_ms: 0)
+     
     
     var body: some View {
         VStack(alignment: .leading ,spacing: 10){
@@ -31,6 +34,7 @@ struct RecentlyPlayedView: View {
             }
             
             VStack {
+                
                 ForEach(Array(spotifyDataManager.recentlyPlayedSongs.enumerated()), id: \.element) { index, song in
                     VStack {
                         HStack {
@@ -47,7 +51,11 @@ struct RecentlyPlayedView: View {
                                     Text(song.track.artists[0].name)
                                         .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 16, fontColor: .accent)
                                 }
+                            }.onTapGesture {
+                                selectedSong = song.track
+                                sheetSong.toggle()
                             }
+                            
                             Spacer()
                             Image(systemName: audioPlayer.isPlaying && song.track.name == audioPlayer.songInPlay  ? "stop.circle.fill" : "play.circle.fill")
                                 .font(.title)
@@ -79,7 +87,10 @@ struct RecentlyPlayedView: View {
             .background(Color.white.opacity(0.1))
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.horizontal, 12)
-            
+            .sheet(isPresented: $sheetSong) {
+                SongDetailView(songToDisplay: $selectedSong)
+                    .presentationDetents([.fraction(0.26), .large])
+            }
 
             
         }

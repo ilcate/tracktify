@@ -98,6 +98,10 @@ class SpotifyDataManager: ObservableObject {
                 switch res.result {
                 case .success(let recentlyPlayed):
                     self.recentlyPlayedSongs = recentlyPlayed.items
+                    if self.recentlyPlayedSongs.count > 3 {
+                        self.recentlyPlayedSongs = Array(self.recentlyPlayedSongs.prefix(3))
+                    }
+                    
                 case .failure(let error):
                     print(error)
                 }
