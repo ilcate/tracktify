@@ -14,9 +14,9 @@ struct ContentView: View {
     @State private var selection: Tab = .home
     
     var body: some View {
-        NavigationStack{
-            VStack {
-                if spotifyDataManager.accessToken != "" {
+        if (spotifyDataManager.accessToken != nil) {
+            NavigationStack{
+                VStack {
                     TabView(selection: $selection) {
                         HomeView()
                             .tabItem {
@@ -27,7 +27,7 @@ struct ContentView: View {
                             }
                             .tag(Tab.home)
                             .background(Color.cBlack)
-            
+                        
                         TopView()
                             .tabItem {
                                 VStack {
@@ -36,7 +36,7 @@ struct ContentView: View {
                                 }
                             }
                             .tag(Tab.other1)
-            
+                        
                         SuggestView()
                             .tabItem {
                                 VStack {
@@ -46,7 +46,7 @@ struct ContentView: View {
                             }
                             .tag(Tab.other2)
                             .background(Color.cBlack)
-            
+                        
                         OtherView()
                             .tabItem {
                                 VStack {
@@ -57,28 +57,29 @@ struct ContentView: View {
                             .tag(Tab.profile)
                     }
                     
-                } else {
-                    Text("Login to Spotify")
-                        .onTapGesture {
-                            spotifyDataManager.showWebView.toggle()
-                        }
-                    .sheet(isPresented: $spotifyDataManager.showWebView) {
-                        if let urlRequest = APIService.shared.getAccessTokenURL() {
-                            WebView(urlRequest: urlRequest) { token in
-                                spotifyDataManager.accessToken = token
-                                spotifyDataManager.showWebView = false
-                                
-                            }
+                    
+                    
+                    
+                }
+            }.environmentObject(spotifyDataManager)
+                .environmentObject(audioPlayer)
+        } else {
+            Text("Login to Spotify")
+                .onTapGesture {
+                    spotifyDataManager.showWebView.toggle()
+                }
+                .sheet(isPresented: $spotifyDataManager.showWebView) {
+                    if let urlRequest = APIService.shared.getAccessTokenURL() {
+                        WebView(urlRequest: urlRequest) { token in
+                            spotifyDataManager.accessToken = token
+                            spotifyDataManager.showWebView = false
+                            
                         }
                     }
                 }
-                
-                
-            }
         }
-        .environmentObject(spotifyDataManager)
-        .environmentObject(audioPlayer)
+        
     }
-
-  
+    
+    
 }

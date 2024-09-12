@@ -36,8 +36,6 @@ class SpotifyDataManager: ObservableObject {
     
     @Published var playlistInItaly : [PlaylistItem] = []
     
-    @Published var songLyrics = ""
-    
     private var userId = ""
     
     
@@ -79,6 +77,7 @@ class SpotifyDataManager: ObservableObject {
     }
     
     func getAlbumNewReleases(){
+    
         let headers = HTTPHeaders(["Authorization": "Bearer \(self.accessToken!)"])
         AF.request("https://api.spotify.com/v1/browse/new-releases?offset=0&limit=10", method: .get, headers: headers)
             .validate(statusCode: 200..<300)
@@ -193,22 +192,8 @@ class SpotifyDataManager: ObservableObject {
             }
     }
     
-    func getSongLyrics(ArtistName: String, SongName: String) {
-        let encodedArtistName = ArtistName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ArtistName
-        let encodedSongName = SongName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? SongName
-        
-        AF.request("https://api.lyrics.ovh/v1/\(encodedArtistName)/\(encodedSongName)", method: .get)
-            .validate(statusCode: 200..<300)
-            .responseDecodable(of: Lyrics.self) { resp in
-                switch resp.result {
-                case .success(let results):
-                    self.songLyrics = results.lyrics
-                case .failure(let error):
-                    print(error)
-                }
-            }
-    }
 
+   
     
     
     func extractURIs(from tracks: [Song]) -> [String] {

@@ -46,6 +46,9 @@
 		2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CF2C76265100E33602 /* SuggestionView.swift */; };
 		2A97D7D52C7761F200E33602 /* AddFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7D42C7761F200E33602 /* AddFiltersView.swift */; };
 		2AA712672C80BB130080837F /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA712662C80BB130080837F /* SongDetailView.swift */; };
+		2ADBAB712C92CFDA00A26A79 /* MusicBrainzAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBAB702C92CFDA00A26A79 /* MusicBrainzAPI.swift */; };
+		2ADBAB732C92CFF700A26A79 /* LyricsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBAB722C92CFF700A26A79 /* LyricsAPI.swift */; };
+		2ADBAB752C92D2F100A26A79 /* APIStructuresMB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBAB742C92D2F100A26A79 /* APIStructuresMB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -101,6 +104,9 @@
 		2A97D7CF2C76265100E33602 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		2A97D7D42C7761F200E33602 /* AddFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersView.swift; sourceTree = "<group>"; };
 		2AA712662C80BB130080837F /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		2ADBAB702C92CFDA00A26A79 /* MusicBrainzAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPI.swift; sourceTree = "<group>"; };
+		2ADBAB722C92CFF700A26A79 /* LyricsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsAPI.swift; sourceTree = "<group>"; };
+		2ADBAB742C92D2F100A26A79 /* APIStructuresMB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStructuresMB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +149,7 @@
 				2A4A15462C64B36100984B84 /* TopView.swift */,
 				2A4A15282C64A8FD00984B84 /* Font */,
 				2A4A15332C64AA4300984B84 /* Utilities */,
-				2A3309972C5CBE5400CEED33 /* SpotifyDataManager */,
+				2ADBAB6F2C92CF9F00A26A79 /* Api */,
 				2A3309862C5CBA5E00CEED33 /* Assets.xcassets */,
 				2A3309882C5CBA5E00CEED33 /* Preview Content */,
 			);
@@ -257,6 +263,17 @@
 			path = Suggestion;
 			sourceTree = "<group>";
 		};
+		2ADBAB6F2C92CF9F00A26A79 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				2ADBAB702C92CFDA00A26A79 /* MusicBrainzAPI.swift */,
+				2ADBAB742C92D2F100A26A79 /* APIStructuresMB.swift */,
+				2ADBAB722C92CFF700A26A79 /* LyricsAPI.swift */,
+				2A3309972C5CBE5400CEED33 /* SpotifyDataManager */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,9 +381,12 @@
 				2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */,
 				2A6F1EF22C731D050001F4F0 /* HomeHeader.swift in Sources */,
 				2A6F1EF82C7321730001F4F0 /* RecentlyPlayedView.swift in Sources */,
+				2ADBAB732C92CFF700A26A79 /* LyricsAPI.swift in Sources */,
 				2A86DBA42C624F3E00B572F8 /* SpotifyDataManager.swift in Sources */,
 				2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */,
+				2ADBAB712C92CFDA00A26A79 /* MusicBrainzAPI.swift in Sources */,
 				2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */,
+				2ADBAB752C92D2F100A26A79 /* APIStructuresMB.swift in Sources */,
 				2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */,
 				2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */,
 			);

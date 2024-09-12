@@ -162,3 +162,5 @@ struct TracksInfo: Decodable, Hashable {
 struct Lyrics : Decodable{
     var lyrics: String
 }
+
+

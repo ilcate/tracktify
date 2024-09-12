@@ -12,7 +12,10 @@ struct SongDetailView: View {
     @Binding var songToDisplay : Song
     @State var height : CGFloat = 0
     @State var aritstNames : String = ""
-    @StateObject var spotifyDataManager = SpotifyDataManager()
+    @EnvironmentObject var spotifyDataManager: SpotifyDataManager
+    @StateObject var lyricsManager = LyricsManager()
+    @StateObject var musicBrainManager = MusicBrainzManager()
+    
 
     
     var body: some View {
@@ -60,7 +63,7 @@ struct SongDetailView: View {
                     if (songToDisplay.artists[0].genres?.isEmpty ?? true){
                         Text("Song Lyrics")
                             .normalTextStyle(fontName: "LeagueSpartan-Bold", fontSize: 24, fontColor: .white)
-                        Text(spotifyDataManager.songLyrics)
+                        Text(lyricsManager.songLyrics)
                         
                     }
                 }
@@ -75,7 +78,10 @@ struct SongDetailView: View {
                 aritstNames = aritstArray.joined(separator: ", ")
                 
                 
-                spotifyDataManager.getSongLyrics(ArtistName: songToDisplay.artists[0].name, SongName: songToDisplay.name)
+                
+                lyricsManager.getSongLyrics(ArtistName: songToDisplay.artists[0].name, SongName: songToDisplay.name)
+                musicBrainManager.getSongInfo(songName: songToDisplay.name, artistName: songToDisplay.artists[0].name)
+                
             }
         
         
