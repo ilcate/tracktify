@@ -14,7 +14,7 @@ struct SongDetailView: View {
     @State var aritstNames : String = ""
     @EnvironmentObject var spotifyDataManager: SpotifyDataManager
     @StateObject var lyricsManager = LyricsManager()
-    @StateObject var musicBrainManager = MusicBrainzManager()
+    @StateObject var geniusApiManager = GeniusApiManager()
     
 
     
@@ -78,10 +78,8 @@ struct SongDetailView: View {
                 aritstNames = aritstArray.joined(separator: ", ")
                 
                 
-                
-                lyricsManager.getSongLyrics(ArtistName: songToDisplay.artists[0].name, SongName: songToDisplay.name)
-                musicBrainManager.getSongInfo(songName: songToDisplay.name, artistName: songToDisplay.artists[0].name)
-                
+                lyricsManager.getSongLyrics(artistName: songToDisplay.artists[0].name, songName: songToDisplay.name)
+                geniusApiManager.searchSong(artistName: songToDisplay.artists[0].name, songName: songToDisplay.name)
             }
         
         

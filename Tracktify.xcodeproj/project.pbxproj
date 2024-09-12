@@ -36,7 +36,6 @@
 		2A86DB9C2C60F47100B572F8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DB9B2C60F47100B572F8 /* APIService.swift */; };
 		2A86DB9E2C60F6A300B572F8 /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DB9D2C60F6A300B572F8 /* Web.swift */; };
 		2A86DBA42C624F3E00B572F8 /* SpotifyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */; };
-		2A86DBA82C6250EA00B572F8 /* APIStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBA72C6250EA00B572F8 /* APIStructures.swift */; };
 		2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBAB2C62576800B572F8 /* SongInTop.swift */; };
 		2A86DBAF2C62595A00B572F8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */; };
 		2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */; };
@@ -46,9 +45,10 @@
 		2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7CF2C76265100E33602 /* SuggestionView.swift */; };
 		2A97D7D52C7761F200E33602 /* AddFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97D7D42C7761F200E33602 /* AddFiltersView.swift */; };
 		2AA712672C80BB130080837F /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA712662C80BB130080837F /* SongDetailView.swift */; };
-		2ADBAB712C92CFDA00A26A79 /* MusicBrainzAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBAB702C92CFDA00A26A79 /* MusicBrainzAPI.swift */; };
 		2ADBAB732C92CFF700A26A79 /* LyricsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBAB722C92CFF700A26A79 /* LyricsAPI.swift */; };
-		2ADBAB752C92D2F100A26A79 /* APIStructuresMB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADBAB742C92D2F100A26A79 /* APIStructuresMB.swift */; };
+		2AEC53252C9317FD00D84852 /* GeniusApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC53242C9317FD00D84852 /* GeniusApiManager.swift */; };
+		2AEC53272C931C8800D84852 /* GeniusAPIStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC53262C931C8800D84852 /* GeniusAPIStructures.swift */; };
+		2AEC53292C931C9900D84852 /* SpotifyAPIStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC53282C931C9900D84852 /* SpotifyAPIStructures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,7 +95,6 @@
 		2A86DB9B2C60F47100B572F8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2A86DB9D2C60F6A300B572F8 /* Web.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
 		2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyDataManager.swift; sourceTree = "<group>"; };
-		2A86DBA72C6250EA00B572F8 /* APIStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStructures.swift; sourceTree = "<group>"; };
 		2A86DBAB2C62576800B572F8 /* SongInTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInTop.swift; sourceTree = "<group>"; };
 		2A86DBB02C639D4900B572F8 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		2A8F30ED2C7CB2D900C01D79 /* SheetCompletePlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetCompletePlaylist.swift; sourceTree = "<group>"; };
@@ -104,9 +103,10 @@
 		2A97D7CF2C76265100E33602 /* SuggestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionView.swift; sourceTree = "<group>"; };
 		2A97D7D42C7761F200E33602 /* AddFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFiltersView.swift; sourceTree = "<group>"; };
 		2AA712662C80BB130080837F /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
-		2ADBAB702C92CFDA00A26A79 /* MusicBrainzAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBrainzAPI.swift; sourceTree = "<group>"; };
 		2ADBAB722C92CFF700A26A79 /* LyricsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsAPI.swift; sourceTree = "<group>"; };
-		2ADBAB742C92D2F100A26A79 /* APIStructuresMB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStructuresMB.swift; sourceTree = "<group>"; };
+		2AEC53242C9317FD00D84852 /* GeniusApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusApiManager.swift; sourceTree = "<group>"; };
+		2AEC53262C931C8800D84852 /* GeniusAPIStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusAPIStructures.swift; sourceTree = "<group>"; };
+		2AEC53282C931C9900D84852 /* SpotifyAPIStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPIStructures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 				2A86DB9B2C60F47100B572F8 /* APIService.swift */,
 				2A86DB9D2C60F6A300B572F8 /* Web.swift */,
 				2A86DBA32C624F3E00B572F8 /* SpotifyDataManager.swift */,
-				2A86DBA72C6250EA00B572F8 /* APIStructures.swift */,
+				2AEC53282C931C9900D84852 /* SpotifyAPIStructures.swift */,
 			);
 			path = SpotifyDataManager;
 			sourceTree = "<group>";
@@ -266,12 +266,20 @@
 		2ADBAB6F2C92CF9F00A26A79 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				2ADBAB702C92CFDA00A26A79 /* MusicBrainzAPI.swift */,
-				2ADBAB742C92D2F100A26A79 /* APIStructuresMB.swift */,
+				2AEC53232C9317E800D84852 /* GeniusApiManager */,
 				2ADBAB722C92CFF700A26A79 /* LyricsAPI.swift */,
 				2A3309972C5CBE5400CEED33 /* SpotifyDataManager */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		2AEC53232C9317E800D84852 /* GeniusApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC53242C9317FD00D84852 /* GeniusApiManager.swift */,
+				2AEC53262C931C8800D84852 /* GeniusAPIStructures.swift */,
+			);
+			path = GeniusApiManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,16 +374,18 @@
 				2A4A15492C64B37300984B84 /* SuggestView.swift in Sources */,
 				2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */,
 				2A6F1EFB2C7323200001F4F0 /* Title.swift in Sources */,
+				2AEC53272C931C8800D84852 /* GeniusAPIStructures.swift in Sources */,
 				2A4A15452C64B33000984B84 /* HomeView.swift in Sources */,
 				2AA712672C80BB130080837F /* SongDetailView.swift in Sources */,
 				2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */,
+				2AEC53252C9317FD00D84852 /* GeniusApiManager.swift in Sources */,
 				2A4A15322C64AA0A00984B84 /* ViewModifiers.swift in Sources */,
 				2A6F1EF42C731D9B0001F4F0 /* NewReleases.swift in Sources */,
+				2AEC53292C931C9900D84852 /* SpotifyAPIStructures.swift in Sources */,
 				2A4A154D2C64B3AD00984B84 /* OtherView.swift in Sources */,
 				2A8F30EE2C7CB2D900C01D79 /* SheetCompletePlaylist.swift in Sources */,
 				2A86DB9E2C60F6A300B572F8 /* Web.swift in Sources */,
 				2A86DB982C60F29900B572F8 /* APIConstants.swift in Sources */,
-				2A86DBA82C6250EA00B572F8 /* APIStructures.swift in Sources */,
 				2A86DB9A2C60F43200B572F8 /* NetworkError.swift in Sources */,
 				2A97D7D52C7761F200E33602 /* AddFiltersView.swift in Sources */,
 				2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */,
@@ -384,9 +394,7 @@
 				2ADBAB732C92CFF700A26A79 /* LyricsAPI.swift in Sources */,
 				2A86DBA42C624F3E00B572F8 /* SpotifyDataManager.swift in Sources */,
 				2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */,
-				2ADBAB712C92CFDA00A26A79 /* MusicBrainzAPI.swift in Sources */,
 				2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */,
-				2ADBAB752C92D2F100A26A79 /* APIStructuresMB.swift in Sources */,
 				2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */,
 				2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */,
 			);

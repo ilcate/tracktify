@@ -11,9 +11,9 @@ import Alamofire
 class LyricsManager: ObservableObject {
     @Published var songLyrics = ""
     
-    func getSongLyrics(ArtistName: String, SongName: String) {
-        let encodedArtistName = ArtistName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ArtistName
-        let encodedSongName = SongName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? SongName
+    func getSongLyrics(artistName: String, songName: String) {
+        let encodedArtistName = artistName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? artistName
+        let encodedSongName = songName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? songName
         
         AF.request("https://api.lyrics.ovh/v1/\(encodedArtistName)/\(encodedSongName)", method: .get)
             .validate(statusCode: 200..<300)
