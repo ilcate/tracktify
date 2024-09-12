@@ -32,6 +32,7 @@ struct Song : Decodable, Hashable, Equatable {
 struct Artist: Decodable, Hashable {
     var id: String
     var name: String
+    var genres: [String]?
 }
 
 struct Album: Decodable, Hashable {
@@ -156,4 +157,8 @@ struct PlaylistOwner: Decodable, Hashable {
 struct TracksInfo: Decodable, Hashable {
     var href: String
     var total: Int
+}
+
+struct Lyrics : Decodable{
+    var lyrics: String
 }

@@ -12,7 +12,8 @@ struct SongDetailView: View {
     @Binding var songToDisplay : Song
     @State var height : CGFloat = 0
     @State var aritstNames : String = ""
-    
+    @StateObject var spotifyDataManager = SpotifyDataManager()
+
     
     var body: some View {
         VStack{
@@ -37,7 +38,7 @@ struct SongDetailView: View {
                         .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 22, fontColor: .accent)
                         .lineLimit(1)
                     Spacer()
-                    Text("\(convertMStoM(milliseconds: songToDisplay.duration_ms))")
+                    Text("Duration: \(convertMStoM(milliseconds: songToDisplay.duration_ms))")
                         .normalTextStyle(fontName: "LeagueSpartan-Medium", fontSize: 18, fontColor: .white.opacity(0.5))
                         .padding(.bottom, 6)
                     
@@ -56,10 +57,12 @@ struct SongDetailView: View {
                         .normalTextStyle(fontName: "LeagueSpartan-Bold", fontSize: 18, fontColor: .accent)
                     
                 } else {
-                    Text("More info")
-                    
-                    
-                    
+                    if (songToDisplay.artists[0].genres?.isEmpty ?? true){
+                        Text("Song Lyrics")
+                            .normalTextStyle(fontName: "LeagueSpartan-Bold", fontSize: 24, fontColor: .white)
+                        Text(spotifyDataManager.songLyrics)
+                        
+                    }
                 }
             }.padding(.top, 12)
             
@@ -71,6 +74,8 @@ struct SongDetailView: View {
                 aritstArray = songToDisplay.artists.map{ $0.name }
                 aritstNames = aritstArray.joined(separator: ", ")
                 
+                
+                spotifyDataManager.getSongLyrics(ArtistName: songToDisplay.artists[0].name, SongName: songToDisplay.name)
             }
         
         
