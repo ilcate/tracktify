@@ -80,6 +80,7 @@ struct SongDetailView: View {
                 
                 lyricsManager.getSongLyrics(artistName: songToDisplay.artists[0].name, songName: songToDisplay.name)
                 geniusApiManager.searchSong(artistName: songToDisplay.artists[0].name, songName: songToDisplay.name)
+                geniusApiManager.fetchLyrics(from: "/\(songToDisplay.artists[0].name.replacingOccurrences(of: " ", with: "-").replacingOccurrences(of: "'", with: "").lowercased())-\(songToDisplay.name.replacingOccurrences(of: " ", with: "-").replacingOccurrences(of: "'", with: "").lowercased())-lyrics")
             }
         
         

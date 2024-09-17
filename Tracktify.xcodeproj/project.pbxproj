@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A291D282C99BF4500685825 /* LyricEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D272C99BF4500685825 /* LyricEndpoint.swift */; };
+		2A291D2A2C99BF7500685825 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D292C99BF7500685825 /* ApiEndpoint.swift */; };
+		2A291D2D2C99C0D600685825 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 2A291D2C2C99C0D600685825 /* SwiftSoup */; };
 		2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */; };
 		2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309842C5CBA5D00CEED33 /* ContentView.swift */; };
 		2A3309872C5CBA5E00CEED33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3309862C5CBA5E00CEED33 /* Assets.xcassets */; };
@@ -66,6 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A291D272C99BF4500685825 /* LyricEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricEndpoint.swift; sourceTree = "<group>"; };
+		2A291D292C99BF7500685825 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		2A33097F2C5CBA5D00CEED33 /* Tracktify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracktify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracktifyApp.swift; sourceTree = "<group>"; };
 		2A3309842C5CBA5D00CEED33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A86DBAF2C62595A00B572F8 /* SDWebImageSwiftUI in Frameworks */,
+				2A291D2D2C99C0D600685825 /* SwiftSoup in Frameworks */,
 				2A3309A02C5E0F3100CEED33 /* SpotifyLogin.xcframework in Frameworks */,
 				2A86DB942C60B26000B572F8 /* Alamofire in Frameworks */,
 			);
@@ -278,6 +284,8 @@
 			children = (
 				2AEC53242C9317FD00D84852 /* GeniusApiManager.swift */,
 				2AEC53262C931C8800D84852 /* GeniusAPIStructures.swift */,
+				2A291D272C99BF4500685825 /* LyricEndpoint.swift */,
+				2A291D292C99BF7500685825 /* ApiEndpoint.swift */,
 			);
 			path = GeniusApiManager;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 			packageProductDependencies = (
 				2A86DB932C60B26000B572F8 /* Alamofire */,
 				2A86DBAE2C62595A00B572F8 /* SDWebImageSwiftUI */,
+				2A291D2C2C99C0D600685825 /* SwiftSoup */,
 			);
 			productName = Tracktify;
 			productReference = 2A33097F2C5CBA5D00CEED33 /* Tracktify.app */;
@@ -334,6 +343,7 @@
 			packageReferences = (
 				2A86DB922C60B26000B572F8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2A86DBAD2C62595A00B572F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				2A291D2B2C99C0D600685825 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 2A3309802C5CBA5D00CEED33 /* Products */;
 			projectDirPath = "";
@@ -397,6 +407,8 @@
 				2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */,
 				2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */,
 				2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */,
+				2A291D282C99BF4500685825 /* LyricEndpoint.swift in Sources */,
+				2A291D2A2C99BF7500685825 /* ApiEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +630,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A291D2B2C99C0D600685825 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.5;
+			};
+		};
 		2A86DB922C60B26000B572F8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -637,6 +657,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A291D2C2C99C0D600685825 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A291D2B2C99C0D600685825 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		2A86DB932C60B26000B572F8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2A86DB922C60B26000B572F8 /* XCRemoteSwiftPackageReference "Alamofire" */;
