@@ -10,6 +10,8 @@
 		2A291D282C99BF4500685825 /* LyricEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D272C99BF4500685825 /* LyricEndpoint.swift */; };
 		2A291D2A2C99BF7500685825 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D292C99BF7500685825 /* ApiEndpoint.swift */; };
 		2A291D2D2C99C0D600685825 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 2A291D2C2C99C0D600685825 /* SwiftSoup */; };
+		2A291D2F2C9AC1B200685825 /* SongLyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */; };
+		2A291D312C9ACE8000685825 /* PersonInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D302C9ACE8000685825 /* PersonInformationView.swift */; };
 		2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */; };
 		2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309842C5CBA5D00CEED33 /* ContentView.swift */; };
 		2A3309872C5CBA5E00CEED33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3309862C5CBA5E00CEED33 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		2A291D272C99BF4500685825 /* LyricEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricEndpoint.swift; sourceTree = "<group>"; };
 		2A291D292C99BF7500685825 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongLyricsView.swift; sourceTree = "<group>"; };
+		2A291D302C9ACE8000685825 /* PersonInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationView.swift; sourceTree = "<group>"; };
 		2A33097F2C5CBA5D00CEED33 /* Tracktify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracktify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracktifyApp.swift; sourceTree = "<group>"; };
 		2A3309842C5CBA5D00CEED33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A291D332C9ACEA000685825 /* SongDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SongDetail;
+			sourceTree = "<group>";
+		};
 		2A3309762C5CBA5D00CEED33 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +232,7 @@
 		2A6F1EF02C731CC00001F4F0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2A291D332C9ACEA000685825 /* SongDetail */,
 				2A6F1EF92C7323080001F4F0 /* General */,
 				2A6F1EEF2C731CAE0001F4F0 /* Home */,
 			);
@@ -243,6 +255,8 @@
 				2A8F30E92C7CA6CA00C01D79 /* Home */,
 				2A4A154C2C64B3AD00984B84 /* OtherView.swift */,
 				2AA712662C80BB130080837F /* SongDetailView.swift */,
+				2A291D302C9ACE8000685825 /* PersonInformationView.swift */,
+				2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +407,8 @@
 				2A6F1EF42C731D9B0001F4F0 /* NewReleases.swift in Sources */,
 				2AEC53292C931C9900D84852 /* SpotifyAPIStructures.swift in Sources */,
 				2A4A154D2C64B3AD00984B84 /* OtherView.swift in Sources */,
+				2A291D312C9ACE8000685825 /* PersonInformationView.swift in Sources */,
+				2A291D2F2C9AC1B200685825 /* SongLyricsView.swift in Sources */,
 				2A8F30EE2C7CB2D900C01D79 /* SheetCompletePlaylist.swift in Sources */,
 				2A86DB9E2C60F6A300B572F8 /* Web.swift in Sources */,
 				2A86DB982C60F29900B572F8 /* APIConstants.swift in Sources */,

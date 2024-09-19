@@ -42,7 +42,7 @@ class SpotifyDataManager: ObservableObject {
     
     func logout(){
         UserDefaults.standard.removeObject(forKey: "Authorization")
-        self.accessToken = ""
+        self.accessToken = nil
     }
     
     
@@ -86,7 +86,7 @@ class SpotifyDataManager: ObservableObject {
                 case .success(let album):
                     self.newReleasedAlbums = album.albums.items
                 case .failure(let error):
-                    print(error)
+                    self.logout()
                 }
             }
     }
