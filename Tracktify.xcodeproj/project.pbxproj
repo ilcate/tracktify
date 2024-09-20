@@ -12,6 +12,9 @@
 		2A291D2D2C99C0D600685825 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 2A291D2C2C99C0D600685825 /* SwiftSoup */; };
 		2A291D2F2C9AC1B200685825 /* SongLyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */; };
 		2A291D312C9ACE8000685825 /* PersonInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D302C9ACE8000685825 /* PersonInformationView.swift */; };
+		2A291D352C9DA47300685825 /* ProducerAndWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D342C9DA47300685825 /* ProducerAndWriterView.swift */; };
+		2A291D372C9DA86300685825 /* MacroSongDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D362C9DA86300685825 /* MacroSongDetail.swift */; };
+		2A291D392C9DADF400685825 /* TopSongsHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A291D382C9DADF400685825 /* TopSongsHomeView.swift */; };
 		2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */; };
 		2A3309852C5CBA5D00CEED33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3309842C5CBA5D00CEED33 /* ContentView.swift */; };
 		2A3309872C5CBA5E00CEED33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3309862C5CBA5E00CEED33 /* Assets.xcassets */; };
@@ -75,6 +78,9 @@
 		2A291D292C99BF7500685825 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongLyricsView.swift; sourceTree = "<group>"; };
 		2A291D302C9ACE8000685825 /* PersonInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInformationView.swift; sourceTree = "<group>"; };
+		2A291D342C9DA47300685825 /* ProducerAndWriterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducerAndWriterView.swift; sourceTree = "<group>"; };
+		2A291D362C9DA86300685825 /* MacroSongDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroSongDetail.swift; sourceTree = "<group>"; };
+		2A291D382C9DADF400685825 /* TopSongsHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSongsHomeView.swift; sourceTree = "<group>"; };
 		2A33097F2C5CBA5D00CEED33 /* Tracktify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracktify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3309822C5CBA5D00CEED33 /* TracktifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracktifyApp.swift; sourceTree = "<group>"; };
 		2A3309842C5CBA5D00CEED33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +142,10 @@
 		2A291D332C9ACEA000685825 /* SongDetail */ = {
 			isa = PBXGroup;
 			children = (
+				2A291D302C9ACE8000685825 /* PersonInformationView.swift */,
+				2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */,
+				2A291D342C9DA47300685825 /* ProducerAndWriterView.swift */,
+				2A291D362C9DA86300685825 /* MacroSongDetail.swift */,
 			);
 			path = SongDetail;
 			sourceTree = "<group>";
@@ -255,8 +265,6 @@
 				2A8F30E92C7CA6CA00C01D79 /* Home */,
 				2A4A154C2C64B3AD00984B84 /* OtherView.swift */,
 				2AA712662C80BB130080837F /* SongDetailView.swift */,
-				2A291D302C9ACE8000685825 /* PersonInformationView.swift */,
-				2A291D2E2C9AC1B200685825 /* SongLyricsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,9 +272,10 @@
 		2A8F30E92C7CA6CA00C01D79 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2A6F1EF72C7321730001F4F0 /* RecentlyPlayedView.swift */,
 				2A4A15442C64B33000984B84 /* HomeView.swift */,
+				2A6F1EF72C7321730001F4F0 /* RecentlyPlayedView.swift */,
 				2A97D7C92C733D7100E33602 /* ListRecentView.swift */,
+				2A291D382C9DADF400685825 /* TopSongsHomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -399,6 +408,7 @@
 				2A86DBAC2C62576800B572F8 /* SongInTop.swift in Sources */,
 				2A6F1EFB2C7323200001F4F0 /* Title.swift in Sources */,
 				2AEC53272C931C8800D84852 /* GeniusAPIStructures.swift in Sources */,
+				2A291D372C9DA86300685825 /* MacroSongDetail.swift in Sources */,
 				2A4A15452C64B33000984B84 /* HomeView.swift in Sources */,
 				2AA712672C80BB130080837F /* SongDetailView.swift in Sources */,
 				2A86DBB12C639D4900B572F8 /* AudioPlayer.swift in Sources */,
@@ -406,6 +416,7 @@
 				2A4A15322C64AA0A00984B84 /* ViewModifiers.swift in Sources */,
 				2A6F1EF42C731D9B0001F4F0 /* NewReleases.swift in Sources */,
 				2AEC53292C931C9900D84852 /* SpotifyAPIStructures.swift in Sources */,
+				2A291D352C9DA47300685825 /* ProducerAndWriterView.swift in Sources */,
 				2A4A154D2C64B3AD00984B84 /* OtherView.swift in Sources */,
 				2A291D312C9ACE8000685825 /* PersonInformationView.swift in Sources */,
 				2A291D2F2C9AC1B200685825 /* SongLyricsView.swift in Sources */,
@@ -422,6 +433,7 @@
 				2A97D7D02C76265200E33602 /* SuggestionView.swift in Sources */,
 				2A3309832C5CBA5D00CEED33 /* TracktifyApp.swift in Sources */,
 				2A97D7CC2C74774F00E33602 /* GenresView.swift in Sources */,
+				2A291D392C9DADF400685825 /* TopSongsHomeView.swift in Sources */,
 				2A97D7CA2C733D7100E33602 /* ListRecentView.swift in Sources */,
 				2A291D282C99BF4500685825 /* LyricEndpoint.swift in Sources */,
 				2A291D2A2C99BF7500685825 /* ApiEndpoint.swift in Sources */,

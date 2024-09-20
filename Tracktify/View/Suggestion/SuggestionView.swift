@@ -34,7 +34,7 @@ struct SuggestionView: View {
                 }
                 .padding(.top, 16)
                 
-                ScrollView {
+                ScrollView(showsIndicators: false){
                     ForEach(Array(spotifyDataManager.suggestions.enumerated()), id: \.0) { index, song in
                         HStack {
                             Image(systemName: "trash.circle")

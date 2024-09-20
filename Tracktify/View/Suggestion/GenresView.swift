@@ -26,7 +26,7 @@ struct GenresView: View {
 //                       )
                 
                 
-                ScrollView {
+                ScrollView(showsIndicators: false){
                     LazyVStack(alignment: .leading, spacing: 10) {
                         ForEach(groupItems(genreSearch == "" ? spotifyDataManager.spotifyGenres : spotifyDataManager.spotifyGenres.filter({ $0.contains(genreSearch)})), id: \.self) { rowItems in
                             HStack {

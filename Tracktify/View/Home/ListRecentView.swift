@@ -32,7 +32,7 @@ struct ListRecentView: View {
             }
             .padding(.top, 16)
             
-            ScrollView {
+            ScrollView(showsIndicators: false){
                 ForEach(Array(spotifyDataManager.recentlyPlayedSongs.enumerated()), id: \.element) { index, song in
                         HStack {
                             HStack {

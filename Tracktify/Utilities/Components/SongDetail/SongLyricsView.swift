@@ -11,10 +11,11 @@ struct SongLyricsView: View {
     @ObservedObject var geniusApiManager : GeniusApiManager
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8){
+        VStack(alignment: .leading){
+            VStack{}.frame(height: 4)
             HStack(alignment: .center){
                 Text("Song Lyrics")
-                    .normalTextStyle(fontName: "LeagueSpartan-Medium", fontSize: 18, fontColor: .accent)
+                    .normalTextStyle(fontName: "LeagueSpartan-Bold", fontSize: 22, fontColor: .accent)
                 Spacer()
                 Image(systemName: "arrow.up.left.and.arrow.down.right")
                     .font(.caption)
@@ -24,12 +25,13 @@ struct SongLyricsView: View {
                             .opacity(0.2)
                     }
                     
-            }
+            }.padding(.bottom, 10)
            
             Text(geniusApiManager.lyrics)
-                .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 22, fontColor: .white)
+                .normalTextStyle(fontName: "LeagueSpartan-Medium", fontSize: 20, fontColor: .white)
+            Spacer()
         }
-        .padding(16)
+        .padding(.horizontal, 16)
         .frame(height: 300)
         .background(.white.opacity(0.1))
         .clipShape(RoundedRectangle(cornerRadius: 12))

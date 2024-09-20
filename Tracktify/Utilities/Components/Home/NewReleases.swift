@@ -13,7 +13,7 @@ struct NewReleasesView: View {
     
     var body: some View {
         VStack(alignment: .leading ,spacing: 10){
-            Title(titleText: "New releases", toExecute: spotifyDataManager.getAlbumNewReleases)
+            Title(titleText: "New Releases", toExecute: spotifyDataManager.getAlbumNewReleases)
             
             ScrollView(.horizontal){
                 LazyHStack{

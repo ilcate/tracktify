@@ -31,10 +31,13 @@ struct GeniusSong: Decodable {
     var title: String
     var artist_names: String
     
+    
     var producer_artists : [Person]?
     var song_relationships: [SongRelationship]?
     var writer_artists: [Person]?
     var featured_artists: [Person]?
+    
+    var path: String
 }
  
 
