@@ -20,14 +20,14 @@ struct RecentlyPlayedView: View {
             HStack(alignment: .bottom){
                 Title(titleText: "Recently Played", toExecute: spotifyDataManager.getSomeRecentlyPlayed)
                 Spacer()
-                NavigationLink {
-                    ListRecentView()
-                        .background(.cBlack)
-                } label: {
-                    Text("More")
-                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 16, fontColor: .accent)
-                        .padding(.trailing, 12)
-                }
+//                NavigationLink {
+//                    ListRecentView()
+//                        .background(.cBlack)
+//                } label: {
+//                    Text("More")
+//                        .normalTextStyle(fontName: "LeagueSpartan-SemiBold", fontSize: 16, fontColor: .accent)
+//                        .padding(.trailing, 12)
+//                }
 
                 
                 

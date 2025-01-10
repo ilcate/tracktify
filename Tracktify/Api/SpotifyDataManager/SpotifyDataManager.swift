@@ -192,7 +192,7 @@ class SpotifyDataManager: ObservableObject {
             }
     }
     
-
+//"https://api.spotify.com/v1/search?type=album%2Cartist%2Ctrack&limit=20&offset=0"
    
     
     

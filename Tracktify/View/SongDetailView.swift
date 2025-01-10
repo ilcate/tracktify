@@ -18,6 +18,7 @@ struct SongDetailView: View {
     @StateObject var lyricsManager = LyricsManager()
     @StateObject var geniusApiManager = GeniusApiManager()
     
+    
     var body: some View {
         VStack {
             if height < 250 {
